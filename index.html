@@ -13,23 +13,15 @@
 
         <input type="button" value="On Failure" onClick="onFailure()" />
         <input type="button" value="On Success" onClick="onSuccess()" />
-        <input type="button" value="On Show Modal" onClick="onShowModal()" />
-        <input type="button" value="On Hide Modal" onClick="onHideModal()" />
  
-    
+
     <script type="text/javascript">
 
             function onSuccess() {
-                TohomeWebJS.onReceived("{\"payment_status\":\"successfuly\"}");
+                TohomeWebJS.onReceived("{\"k_payment_status\":\"success\"}");
             }
             function onFailure() {
-                TohomeWebJS.onReceived("{\"payment_status\":\"failure\"}");
-            }
-            function onShowModal() {
-                TohomeWebJS.onReceived("{\"is_kpayment_modal_show\":true}");
-            }
-            function onHideModal() {
-                TohomeWebJS.onReceived("{\"is_kpayment_modal_show\":false}");
+                TohomeWebJS.onReceived("{\"k_payment_status\":\"error\",\"error_message\":\"9000 - Rejected By Issued Bank\"}");
             }
         </script>
     
